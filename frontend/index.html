@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <!--Cabeçalho-->
+      <div class="row mb-4">
+        <div class="col"><h3>Lista de Tarefas</h3></div>
+        <div class="col text-end">
+          <div class="d-flex justify-content-end">
+            <select id="select_filter" class="form-selec me-3 w-50">
+              <option value="">Todos</option>
+              <option value="">Filtro um</option>
+              <option value="">Filtro dois</option>
+            </select>
+            <a href="new_task.html" class="btn btn-primary"> + Nova tarefa</a>
+          </div>
+        </div>
+      </div>
+      <!--Fim Cabeçalho-->
+      <!--Card-->
+      <div class="row mb-3">
+        <div class="col-12 border border-primary rounded p-3 shadow-sm">
+          <div class="row align-items-center">
+            <div class="col-8"><h5>Texto tarefa</h5></div>
+            <div class="col-2">
+              <select id="task_status" class="form-select p-2">
+                <option value="new">New</option>
+                <option value="in progress">in progress</option>
+                <option value="cancel">cancel</option>
+                <option value="done">done</option>
+              </select>
+            </div>
+            <div class="col-1">Edit</div>
+            <div class="col-1 text-end text-danger">Delete</div>
+          </div>
+        </div>
+      </div>
+      <!--Fim Card-->
+      <!-- Sem tarefas-->
+      <div class="row d-none" id="no_tasks">
+        <div class="col text-center">
+          <span class="opacity-75">Sem Tarefas</span>
+        </div>
+      </div>
+      <!-- Fim Sem tarefas-->
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
