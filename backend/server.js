@@ -17,11 +17,7 @@ app.listen(3000, () => {
 })
 
 app.use(cors());
-
-
-
-
-
+app.use(express.json());
 //Rotas--------------------------------
 app.get("/", (req, res) => {
     connection.query("SELECT COUNT(*) users FROM users", (err, results) => {
@@ -47,4 +43,16 @@ app.get("/user/:id/tasks", (req, res) => {
             res.send(err.message);
         } res.json(results);
     })
+})
+//Update de status
+app.post("/user/tasks/update_status/", (req, res) => {
+
+    connection.query("UPDATE tasks SET task_status = ?, updated_at = NOW() WHERE id = ? ", [req.body.status, req.body.id_task], (err, results) => {
+        if (err) {
+            res.send("MySql Connection error.");
+        }
+    })
+
+    res.json('Ok');
+
 })
